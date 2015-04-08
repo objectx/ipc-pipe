@@ -9,13 +9,13 @@ import           Development.Shake.Util     (needMakefileDependencies)
 
 main :: IO ()
 main = shakeArgs shakeOptions{shakeFiles="_build"} $ do
-    want ["_build/reactive-sample" <.> exe, "_build/pipe-sample" <.> exe]
+    want ["_build/test1" <.> exe, "_build/pipe-sample" <.> exe]
 
     phony "clean" $ do
         putNormal "Cleaning files in _build"
         removeFilesAfter "_build" ["//*"]
 
-    "_build/reactive-sample" <.> exe %> \out -> do
+    "_build/test1" <.> exe %> \out -> do
         let obj = out -<.> "o"
         need [obj]
         cmd "cc -o" [out] obj
