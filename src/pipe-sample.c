@@ -113,7 +113,9 @@ int main(int argc, char *argv[]) {
         perror("error");
         return 1;
     }
-    printf("test2: %s\n", buf);
+    printf ("test2: ") ;
+    fwrite (buf, 1, size, stdout) ;
+    printf ("\n") ;
 
     return 0;
 }
