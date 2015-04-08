@@ -13,8 +13,9 @@ int main() {
         return 1;
     }
 
-    buf[rc] = '\0';
-    printf("test1: %s\n", buf);
+    printf ("test1: ") ;
+    fwrite (buf, 1, rc, stdout) ;
+    printf ("\n") ;
 
     return 0;
 }
